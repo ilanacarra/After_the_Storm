@@ -7,4 +7,4 @@ if test -z "$F" ; then
   F=$D.pot
 fi
 
-find -name '*lua' -or -name '*cfg' | xargs perl -w ./utils/wmlgettext --domain=$D  | tail -n +3 > $F
+find -name '*lua' -or -name '*cfg' | xargs perl -w ./utils/wmlgettext --domain=$D  > $F
