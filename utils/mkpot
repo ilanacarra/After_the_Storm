@@ -1,10 +1,10 @@
 #!/bin/sh
 
 F=$1
+D=wesnoth-After_the_Storm
 
 if test -z "$F" ; then
-	echo "Usage: $0 FILE.pot"
-	exit 1
+  F=$D.pot
 fi
 
-find -name '*lua' -or -name '*cfg' | xargs perl -w ./utils/wmlgettext --domain=wesnoth-After_the_Storm  | tail -n +3 > $F
+find -name '*lua' -or -name '*cfg' | xargs perl -w ./utils/wmlgettext --domain=$D  | tail -n +3 > $F
