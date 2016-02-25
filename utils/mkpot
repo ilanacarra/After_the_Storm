@@ -1,0 +1,10 @@
+#!/bin/sh
+
+F=$1
+
+if test -z "$F" ; then
+	echo "Usage: $0 FILE.pot"
+	exit 1
+fi
+
+find -name '*lua' -or -name '*cfg' | xargs perl -w ./utils/wmlgettext --domain=wesnoth-After_the_Storm  | tail -n +3 > $F
